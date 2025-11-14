@@ -1,1 +1,20 @@
 # MSCS_634_Lab_4
+
+## Purpose
+
+This lab assignment focuses on comprehensive regression analysis using the Diabetes dataset from sklearn. The primary objective is to explore and compare various regression techniques to predict disease progression based on health measurements. Through this lab, I was able to evaluate five different regression models: Simple Linear Regression (using a single feature), Multiple Regression (using all features), Polynomial Regression (capturing non-linear relationships with all 10 features), Ridge Regression (L2 regularization), and Lasso Regression (L1 regularization with feature selection). Each model is evaluated using standard metrics including Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² score. The lab emphasizes understanding the trade-offs between model complexity and generalization, demonstrates how regularization techniques prevent overfitting, and provides insights into feature importance and model interpretability. Additionally, students will visualize model predictions, analyze overfitting and underfitting behaviors, and draw meaningful conclusions about which regression approaches work best for this particular dataset.
+
+## Insights gained
+
+### Model Performance: 
+The Simple Linear Regression model showed the weakest performance, with the highest MAE and RMSE values and the lowest R² scores, indicating that using a single feature is insufficient to capture the complexity of the Diabetes dataset. Multiple Regression improved performance significantly by reducing errors and increasing R² scores through the use of all features. Polynomial Regression (degree 2) further reduced training errors and achieved the highest training R², suggesting it captured non-linear relationships, but the higher test RMSE and slightly lower test R² compared to Multiple Regression indicate some overfitting. Ridge and Lasso Regression with α = 0.10 achieved balanced results, maintaining slightly higher training errors than Polynomial Regression while improving test performance, demonstrating effective regularization.
+
+### Handling Overfitting and Performance Improvement: 
+Polynomial Regression showed signs of overfitting, as its training errors were very low but test errors were higher. Ridge and Lasso Regression with α = 0.10 successfully mitigated overfitting by penalizing large coefficients, keeping training performance reasonable while slightly improving test R² scores compared to Multiple Regression. Lasso, in particular, slightly outperformed Ridge on test R², suggesting it helped reduce unnecessary feature contributions, simplifying the model without sacrificing predictive power.
+
+### Insights about the Diabetes Dataset: 
+The results indicate that the Diabetes dataset contains multiple relevant features and some non-linear relationships, as reflected in the improved performance of Multiple and Polynomial Regression. Nevertheless, the moderate R² scores even in the best models suggest that the dataset contains variability that is not fully captured by linear or simple polynomial models. Regularization, as seen in Ridge and Lasso with α = 0.10, is valuable for stabilizing predictions and reducing overfitting, emphasizing the importance of controlling feature influence when modeling this dataset.
+
+## Challenges faced:
+
+One of the challenges I faced was determining the correct alpha value for Ridge and Lasso regression. The alpha parameter controls the strength of regularization, and choosing the wrong value can either under-penalize the model, leading to overfitting, or over-penalize it, causing underfitting and poor predictive performance. Determining the optimal alpha required testing multiple values and carefully comparing their impact on training and test errors as well as R² scores. Balancing this trade-off between bias and variance was time-consuming and required iterative experimentation to identify the alpha value that maximized test performance while maintaining a stable and generalizable model.
